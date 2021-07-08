@@ -50,7 +50,9 @@ module.exports = {
   // Configuration of the application server
   app: {
     // Local port on which to run the app server
-    port: +process.env.BEAM_PROD_APP_PORT || 3000
+    port: +process.env.BEAM_DEV_APP_PORT || 3000,
+    // Comma separated list of the queue that the worker handles
+    queues: process.env.BEAM_PROD_APP_QUEUES || 'media_workers',
   },
   // Rules that match path patterns and cause work to happen
   // - All rules can be overridden by a config files loaded on the command line
